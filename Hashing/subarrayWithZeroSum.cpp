@@ -4,7 +4,7 @@ using namespace std;
 typedef long long ll;
 #define fo(i, n) for(int i = 0;i<n;i++);
  
-int sub(int a[], int n) {
+bool sub(int a[], int n) {
 
     int prefix_sum = 0;
 

@@ -6,8 +6,6 @@ typedef long long ll;
 
 void mostf(int a[], int n) {
 
-    int temp[n];
-    int j = 0;
 
     unordered_map<int, int> umap;
     unordered_map<int, int> :: iterator it;
@@ -19,19 +17,21 @@ void mostf(int a[], int n) {
     //     cout<<x.first<<" "<<x.second<<endl;
     // }
     int max = 0;
+    int res = 0;
     for(it = umap.begin(); it != umap.end();it++) {
         if((*it).second > max) {
-            max = (*it).first;
+            max = (*it).second;
+            res = (*it).first;
         }
     }
 
-    cout<<max;
+    cout<<res;
 
 }
 
 int main() {
  // We have to find the most frequent element in the array
- int a[] = {5, 6, 8, 3, 6, 8, 5, 6, 6};
+ int a[] = {1, 3, 2, 1, 4, 1};
 
 int n = sizeof(a)/sizeof(a[0]);
 

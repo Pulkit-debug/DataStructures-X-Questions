@@ -10,16 +10,29 @@ for(int i = 0;i<n;i++) {
     if(a[i] == 0) a[i] = -1;
 }
 
-// Now easily we can find the part where the subarray sum is equal to zero
-int prefix_sum = 0;
+unordered_map<int, int> um;
 
-unordered_set<int> us;
-
+int sum = 0;
+int maxLen = 0;
+int umValue = 0;
 for(int i = 0;i<n;i++) {
-prefix_sum += a[i];
+    if(a[i] == -1) {
+        sum += -1;
+    }
+    else {
+        sum += 1;
+    }
+
+  
+    if(um.find(sum) != um.end()) {
+        maxLen = max(maxLen, i-um[sum]);
+    }
+    else {
+        um.insert({sum, i});
+    }
 
 }
-
+return maxLen;
 }
 
 int main() {
@@ -28,6 +41,6 @@ int a[] = {1, 0, 0, 1, 1, 0};
 
 int n = sizeof(a)/sizeof(a[0]);
 
-binary(a, n);
+cout<<binary(a, n);
 return 0;
 }

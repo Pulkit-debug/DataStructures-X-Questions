@@ -33,9 +33,9 @@ int main() {
 
     // Find the maximum Sum of k consequetive elements in the array.
 
-    int a[] = {4, 5, 6, 1, 7, 8, 8, 8};
+    int a[] = {100, 200, 300, 400};
     int n = sizeof(a)/sizeof(a[0]);
-    int k = 3;
+    int k = 2;
     cout<<maxsum(a, n, k);
 
     return 0;
